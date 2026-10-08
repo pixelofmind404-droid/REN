@@ -16,6 +16,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.PORT || 8787);
 const DB_PATH = process.env.DB_PATH || path.join(__dirname, 'nahan_data.sqlite3');
 
+/* ensure DB directory exists (Render: /opt/render/project/src/data) */
+try { fs.mkdirSync(path.dirname(DB_PATH), { recursive: true }); } catch (e) {}
+
 /* ---------- storage: kv_store in SQLite (identical schema to the CF original) ---------- */
 const db = new DatabaseSync(DB_PATH);
 db.exec('CREATE TABLE IF NOT EXISTS kv_store (key TEXT PRIMARY KEY, value TEXT)');
