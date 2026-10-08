@@ -1,0 +1,17 @@
+{
+  "name": "nahan-node",
+  "version": "3.0.4",
+  "private": true,
+  "type": "module",
+  "description": "Nahan (itsyebekhe/nahan v3.0.4) VLESS/Trojan gateway on Node.js - CF Workers 1101 workaround",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
